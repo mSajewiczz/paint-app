@@ -5,10 +5,14 @@ export default function MainBoard(){
 
     const [position, setPosition] = useState({Y: 0, X: 0});
 
-    const handleDraw = (e:React.MouseEvent<HTMLDivElement>) => {
+    const handleDraw = (e: React.MouseEvent<HTMLDivElement>) => {
         setPosition({Y: e.clientY, X: e.clientX})
 
         console.log(`X: ${position.X}, Y: ${position.Y}`);
+
+        return (
+            <div className={`absolute translate-y-${position.Y} translate-x-${position.X} w-px h-px bg-black`}></div>
+        );
     }
 
 
